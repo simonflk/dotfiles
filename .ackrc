@@ -1,0 +1,6 @@
+# --pager=less -x4SRFX
+
+--ignore-dir=node_modules/
+--type-add=css=scss
+--type-set=coffee=.coffee
+--type-set=json=.json

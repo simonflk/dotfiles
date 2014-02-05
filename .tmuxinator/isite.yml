@@ -1,0 +1,27 @@
+# ~/.tmuxinator/isite.yml
+
+name: isite
+root: ~/workspace/isite2
+pre:
+  - vagrant up
+
+windows:
+  - irc: weechat-curses -r '/connect bbc; /join \#c3dev; /join \#cms; /join \#ibroadcast'
+  - vim: vim
+  - isite2:
+      layout: even-horizontal
+      panes:
+        - git status
+        - vagrant ssh
+  - grunt:
+      layout: even-horizontal
+      panes:
+        - grunt watch
+        - grunt
+  - logs:
+      layout: even-horizontal
+      panes:
+        - vagrant ssh -c 'tail -f /var/log/httpd/error_log'
+        - vagrant ssh -c 'tail -f /data/app-logs/apache-tomcat-isite2-xforms/catalina.out'
+        - vagrant ssh -c 'tail -f /data/app-logs/apache-tomcat-isite2-api/catalina.out'
+#  - selenium: ssh sandbox -X -C SELENIUM_ROOT=/mnt/hgfs/workspace/selenium /mnt/hgfs/workspace/isite2/script/selenium.sh
