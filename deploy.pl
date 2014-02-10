@@ -9,23 +9,24 @@ use File::Basename;
 use File::Spec;
 
 my $target = $ARGV[0] // $ENV{HOME};
+my $source_dir = File::Spec->rel2abs(dirname($0));
 
-my %excludes = map { $_ => 1} basename($0), qw(.git .gitmodules);
+my %excludes = map { $_ => 1 } basename($0), qw(.git .gitmodules);
 
 my $mappings = {
+    'gitignore' => '.gitignore'
 };
 
 my @src = grep { !/sw[op]$/ && !$excludes{$_} }
     keys %{{
-        map { $_ => 1 } keys($mappings),  get_sources(dirname($0))
+        map { $_ => 1 } keys($mappings),  get_sources($source_dir)
     }};
 
 foreach my $source (@src) {
     if ($mappings->{$source}) {
         # custom deployment
-    } else {
-        deploy($source, $target);
     }
+    deploy($source, $target, $mappings->{$source});
 }
 
 
@@ -38,9 +39,11 @@ sub get_sources {
 }
 
 sub deploy {
-    my ($source, $target) = @_;
-    my $target_path = File::Spec->catfile($target, $source);
-    if (symlink $source, $target_path) {
+    my ($source, $target, $target_basename) = @_;
+    my $source_path = File::Spec->catfile($source_dir, $source);
+    my $target_path = File::Spec->catfile($target, $target_basename // $source);
+
+    if (symlink $source_path, $target_path) {
         printf "+ $target_path .... OK\n";
     } else {
         warn "skipping '$target_path': $!\n";
