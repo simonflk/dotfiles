@@ -25,34 +25,35 @@ set list
 set cc=80
 
 " toggle line numbers
-nmap \l :setlocal number!<CR>
+nmap <leader>l :setlocal number!<CR>
 set nu
 
 " Gently highlight the current line
 set cursorline
 
 "toggle paste mode
-nmap \o :set paste!<CR>
+nmap <leader>o :set paste!<CR>
 
 "tab modes
-nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
-nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
-nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
-nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+nmap <leader>t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nmap <leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+nmap <leader>M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+nmap <leader>m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 
 " toggle wrap
-nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
+nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 "everybody's buffering...
 nmap <C-b> :CtrlPBuffer<CR>
 nmap <F9> :CtrlPMRU<CR>
 let g:ctrlp_reuse_window = 1
 nmap <C-e> :e#<CR>
-nmap \n :bnext<CR>
-nmap \p :bprev<CR>
+nmap <leader>n :bnext<CR>
+nmap <leader>p :bprev<CR>
 
 "nerd
-nmap \e :NERDTreeToggle<CR>
+nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>@ :NERDTreeFind<CR>
 
 " * Enable vim-airline tabline
 let g:airline#extensions#tabline#enabled = 1
