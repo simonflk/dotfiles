@@ -2,6 +2,7 @@
 "http://www.cs.swarthmore.edu/help/vim
 "see also
 "http://vim.wikia.com/wiki/Have_Vim_check_automatically_if_the_file_has_changed_externally
+"https://github.com/amix/vimrc
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -46,7 +47,6 @@ nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 "everybody's buffering...
 nmap <C-b> :CtrlPBuffer<CR>
 nmap <F9> :CtrlPMRU<CR>
-let g:ctrlp_reuse_window = 1
 nmap <C-e> :e#<CR>
 nmap <leader>n :bnext<CR>
 nmap <leader>p :bprev<CR>
@@ -54,6 +54,16 @@ nmap <leader>p :bprev<CR>
 "nerd
 nmap <leader>e :NERDTreeToggle<CR>
 nmap <leader>@ :NERDTreeFind<CR>
+
+"ctrl-p
+let g:ctrlp_reuse_window = 1
+set wildignore+=node_modules/**,coverage/**,bdd/vendor/**,bdd/page_dumps/**
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\.git$\|\.hg$\|\.svn$\|coverage$\|node_modules$\|bower_components$\|vendor$\|page_dumps$',
+    \ 'file': '',
+    \ 'link': '',
+    \}
+
 
 " * Enable vim-airline tabline
 let g:airline#extensions#tabline#enabled = 1

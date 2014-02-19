@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/javascript"]
 	path = .vim/bundle/javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule ".vim/bundle/mustache"]
+	path = .vim/bundle/mustache
+	url = https://github.com/mustache/vim-mustache-handlebars.git
