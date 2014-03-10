@@ -47,7 +47,6 @@ nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 "everybody's buffering...
 nmap <C-b> :CtrlPBuffer<CR>
 nmap <F9> :CtrlPMRU<CR>
-nmap <C-e> :e#<CR>
 nmap <leader>n :bnext<CR>
 nmap <leader>p :bprev<CR>
 
@@ -70,8 +69,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Always display the status line, even if only one window is displayed
 set laststatus=2
-
-set nocompatible
 
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
