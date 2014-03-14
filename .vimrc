@@ -12,6 +12,13 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color"
   colorscheme zenburn
 endif
 
+" more natural (to me) cmdline navigation
+:cnoremap <C-A> <Home>
+:cnoremap <C-F> <Right>
+:cnoremap <C-B> <Left>
+:cnoremap <Esc>b <S-Left>
+:cnoremap <Esc>f <S-Right>
+
 " I've read this is nice
 set nocompatible
 
