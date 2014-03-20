@@ -61,6 +61,15 @@ nmap <leader>p :bprev<CR>
 nmap <leader>e :NERDTreeToggle<CR>
 nmap <leader>@ :NERDTreeFind<CR>
 
+"quicker comments
+nmap ,/ gcc
+vmap ,/ gc
+imap ,/ <Esc>gcci
+
+" tabs
+nmap ,T :tabnew<CR>
+nmap ,{ :tabprev<CR>
+nmap ,} :tabnext<CR>
 "ctrl-p
 let g:ctrlp_reuse_window = 1
 set wildignore+=node_modules/**,coverage/**,bdd/vendor/**,bdd/page_dumps/**
@@ -83,9 +92,14 @@ set visualbell
 " Enable use of the mouse for all modes
 set mouse=a
 
+" Smart searches
+set ignorecase
+set smartcase
+
 " Natural splits
 set splitbelow
 set splitright
+
 
 " File types
 au BufRead,BufNewFile *.md set filetype=markdown
