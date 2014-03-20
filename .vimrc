@@ -86,3 +86,6 @@ set mouse=a
 " Natural splits
 set splitbelow
 set splitright
+
+" File types
+au BufRead,BufNewFile *.md set filetype=markdown
