@@ -9,7 +9,7 @@ Installation
 
 ```bash
 git clone https://github.com/simonflk/dotfiles.git
-git submodule init && git submodule update
+git submodule update --init
 dotfiles/deploy.pl
 
 ```
