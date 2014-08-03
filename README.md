@@ -8,5 +8,5 @@ Installation
 ============
 
 ```bash
-\curl -sSL https://raw.githubusercontent.com/simonflk/dotfiles/master/install
+\curl -sSL https://raw.githubusercontent.com/simonflk/dotfiles/master/install | bash
 ```
