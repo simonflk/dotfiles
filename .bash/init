@@ -1,0 +1,3 @@
+source ~/.vars/vars.env
+source ~/.vars/paths.env
+source ~/.vars/aliases

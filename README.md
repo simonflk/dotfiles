@@ -8,9 +8,5 @@ Installation
 ============
 
 ```bash
-git clone https://github.com/simonflk/dotfiles.git
-git submodule update --init
-dotfiles/deploy.pl
-
+\curl -sSL https://raw.githubusercontent.com/simonflk/dotfiles/master/install
 ```
-

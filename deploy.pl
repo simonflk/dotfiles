@@ -27,6 +27,7 @@ foreach my $source (@src) {
         # custom deployment
     }
     deploy($source, $target, $mappings->{$source});
+    add_to_profile('.bashrc');
 }
 
 
@@ -47,6 +48,17 @@ sub deploy {
         printf "+ $target_path .... OK\n";
     } else {
         warn "skipping '$target_path': $!\n";
+    }
+}
+
+sub add_to_profile {
+    my $profile = shift;
+    my $file = File::Spec->catfile($ENV{HOME}, $profile);
+    if (system(qw(grep https://github.com/simonflk/dotfiles), $file) != 0) {
+        open my $bashrc, ">>", $file or die "error opening $file -- $!";
+        print $bashrc "\n\n"
+            ."# initialise dotfiles (https://github.com/simonflk/dotfiles)\n"
+            ."source ~/.bash/init\n\n"
     }
 }
 

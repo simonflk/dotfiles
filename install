@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Cloning dotfiles repository to $PWD/dotfiles" &&
+git clone https://github.com/simonflk/dotfiles.git &&
+cd dotfiles &&
+git submodule update --init &&
+echo "installing dotfiles" &&
+dotfiles/deploy.pl
