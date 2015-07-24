@@ -1,1 +1,9 @@
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack-grep'
+
+# current, work-related stuff - TODO: split this out
+alias gobe='cd ~/dev/otrl/booking-engine'
+alias goma='cd ~/dev/otrl/mock-apis'
+alias rube='gobe; gulp dev'
+alias ruma='goma; cd servers/dyson && npm start'
+alias tebe='gobe; npm test'
+alias gogo='cd ~/dev/otrl'
