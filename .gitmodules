@@ -61,3 +61,9 @@
 [submodule ".vim/bundle/repeat"]
 	path = .vim/bundle/repeat
 	url = https://github.com/tpope/vim-repeat
+[submodule ".bash/git-aware-prompt"]
+	path = .bash/git-aware-prompt
+	url = git://github.com/jimeh/git-aware-prompt.git
+[submodule ".bash/z"]
+	path = .bash/z
+	url = git@github.com:rupa/z.git

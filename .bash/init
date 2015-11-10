@@ -1,3 +1,9 @@
 source ~/.bash/vars.env
 source ~/.bash/paths.env
 source ~/.bash/aliases
+source ~/.bash/z/z.sh
+
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source $GITAWAREPROMPT/main.sh
+export PS1="\[$bldgrn\]\u@\h\[$txtrst\] \w \[$bldylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
+
