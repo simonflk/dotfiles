@@ -1,7 +1,8 @@
 [credential]
   helper = cache --timeout=86400
 [user]
-  name = Simon Flack
+	name = Simon
+	email = simonflack@gmail.com
 #  email = simon.flack1@bbc.co.uk
 [core]
   quotepath = false
