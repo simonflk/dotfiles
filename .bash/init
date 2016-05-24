@@ -1,9 +1,14 @@
-source ~/.bash/vars.env
-source ~/.bash/paths.env
-source ~/.bash/aliases
-source ~/.bash/z/z.sh
+echo ${BASH_SOURCE}
+cur_file="${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}"
+cur_dir="$(dirname "${cur_file}")"
+cur_dir="$(dirname "${BASH_SOURCE}")"
+source $cur_dir/vars.env
+source $cur_dir/paths.env
+source $cur_dir/aliases
+source $cur_dir/z/z.sh
+for f in $cur_dir/completion/*; do source $f; done
 
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
+export GITAWAREPROMPT=$cur_dir/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 export PS1="\[$bldgrn\]\u@\h\[$txtrst\] \w \[$bldylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
 
