@@ -8,6 +8,7 @@
   quotepath = false
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile=~/.gitignore
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
   status = auto
   branch = auto
@@ -41,7 +42,7 @@
   ls = ls-files
   pr = pull --rebase
   # Show files ignored by git:
-    ign = ls-files -o -i --exclude-standard
+  ign = ls-files -o -i --exclude-standard
 
 # https://gist.github.com/robmiller/6018582
 #
@@ -109,6 +110,7 @@ delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' 
 
 [push]
   default = upstream
-	followTags = true
+  followTags = true
 [fetch]
-	prune = true
+    prune = true
+    tags = true
