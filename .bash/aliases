@@ -13,7 +13,7 @@ alias gogo='cd ~/dev/otrl'
 git(){
     command git "$@"
     local exitCode=$?
-    if [ $exitCode -ne 0 ]; then
+    if [ $exitCode -ne 0 ] && [ "$1" != "grep" ] ; then
         printf "\033[1;31mERROR: git exited with code $exitCode\033[0m\n"
         return $exitCode
     fi
