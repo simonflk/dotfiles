@@ -7,3 +7,14 @@ alias rube='gobe; gulp dev'
 alias ruma='goma; cd servers/dyson && npm start'
 alias tebe='gobe; npm test'
 alias gogo='cd ~/dev/otrl'
+
+# https://stackoverflow.com/a/35904417
+# Wrap git. On errors, print an additional line in red.
+git(){
+    command git "$@"
+    local exitCode=$?
+    if [ $exitCode -ne 0 ]; then
+        printf "\033[1;31mERROR: git exited with code $exitCode\033[0m\n"
+        return $exitCode
+    fi
+}
