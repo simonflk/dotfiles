@@ -18,3 +18,5 @@ git(){
         return $exitCode
     fi
 }
+alias fix-keyboard="sudo kbd_mode -s"
+alias fix-touchpad="synclient TouchpadOff=0"
