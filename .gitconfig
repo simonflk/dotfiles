@@ -116,3 +116,5 @@ delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' 
 [fetch]
     prune = true
     tags = true
+[init]
+	defaultBranch = main
